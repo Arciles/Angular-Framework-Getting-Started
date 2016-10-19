@@ -6,7 +6,6 @@ import { OnInit } from '@angular/core';
 @Component({
   selector: 'my-heroes',
   template: `
-    <h1>{{title}}</h1>
     <h2>My Heroes</h2>
     <ul class="heroes">
       <li *ngFor="let hero of heroes"
@@ -79,7 +78,7 @@ export class HeroesComponent implements OnInit {
   }
   // get the heroes from hero service
   getHeroes(): void {
-    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
   // on init call the heroes service to get the heroes
   ngOnInit(): void {
